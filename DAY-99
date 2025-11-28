@@ -1,0 +1,29 @@
+/*Q149: Use malloc() to allocate structure memory dynamically and print details.*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Student {
+    char name[20];
+    int roll;
+    int marks;
+};
+
+int main() {
+    struct Student *s;
+
+    // Dynamically allocate memory for Student structure
+    s = (struct Student *)malloc(sizeof(struct Student));
+
+    // Assign values
+    printf("Student allocated dynamically with details:\n");
+    scanf("%s %d %d", s->name, &s->roll, &s->marks);
+
+    // Print details
+    printf("Name: %s | Roll: %d | Marks: %d\n", s->name, s->roll, s->marks);
+
+    // Free allocated memory
+    free(s);
+
+    return 0;
+}
