@@ -1,0 +1,27 @@
+/*Q150: Use pointer to struct to modify and display data using -> operator.*/
+
+#include <stdio.h>
+
+struct Student {
+    char name[20];
+    int roll;
+    int marks;
+};
+
+int main() {
+    struct Student s;
+    struct Student *ptr;
+
+    // Pointer pointing to structure
+    ptr = &s;
+
+    // Modify values using pointer
+    printf("Student pointer modifying values:\n");
+    scanf("%s %d %d", ptr->name, &ptr->roll, &ptr->marks);
+
+    // Display modified data
+    printf("Modified Data: Name: %s | Roll: %d | Marks: %d\n",
+           ptr->name, ptr->roll, ptr->marks);
+
+    return 0;
+}
